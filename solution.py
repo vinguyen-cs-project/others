@@ -13,7 +13,7 @@ for i in range(2):  # attack only need to runs at most 2 times
     for i in range(1, 11):  # TODO actual range will be 1 to 2 ** 20 + 1
 
         # Get a random 256 bit number
-        x = randint(0, 21) # TODO actual range will be 0 to 2 ** 256
+        x = randint(0, 20) # TODO actual range will be 0 to 2 ** 256
         arr[0].append(x)
 
         # Perform BadHash40
