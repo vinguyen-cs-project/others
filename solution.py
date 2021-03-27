@@ -6,20 +6,21 @@
 from random import randint
 from sort import *
 import hashlib
+from utils_demo import *
 
 # Declare array
 arr = [[], []]
-#value to check when found duplicate output
+# value to check when found duplicate output
 found = False
 
 for i in range(2):  # attack only need to runs at most 2 times
-    print("Generate input and hasing them...")
+    print("Generating input and hashing them...")
     # Save 2^20 random inputs and their BadHash40 outputs in arr
     for i in range(1, 2 ** 20 + 1):
 
         # Get a random 256 bit number
         x = randint(0, 2 ** 256 - 1)
-        arr[0].append(x)
+        arr[0].append(hex(x))
 
         # Perform BadHash40
         y = hashlib.sha256(str(x))
@@ -34,9 +35,9 @@ for i in range(2):  # attack only need to runs at most 2 times
         if arr[1][i] == arr[1][i + 1]:
             print(
                 "found pairs of input {"
-                + hex(arr[0][i])
+                + arr[0][i]
                 + ", "
-                + hex(arr[0][i + 1])
+                + arr[0][i + 1]
                 + "} that has the same output "
                 + (arr[1][i])
             )
@@ -45,3 +46,11 @@ for i in range(2):  # attack only need to runs at most 2 times
     if found == True:
         break
     print("\n")
+
+print("Writing inputs and hash outputs to file...")
+with open("hash.txt", "w") as output:
+    output.write("input, output:")
+
+for i in range(len(arr[1])):
+    with open("hash.txt", "a") as output:
+        output.write(arr[0][i] + ", " + arr[1][i])
