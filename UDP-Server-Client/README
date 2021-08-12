@@ -1,0 +1,7 @@
+To compile the program:
+	A makefile was created, so just run 'make'
+
+To run the program:
+	run command ./userver <port> and ./uclient <port> <filename>
+
+A txt file is provided for testing purposes.
