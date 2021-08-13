@@ -53,10 +53,10 @@ int main(int argc, char* argv[])
 		packet rPacket;
 		memset(&rPacket, 0, sizeof(rPacket));
 		recvfrom(sockfd, &rPacket, sizeof rPacket, 0, (struct sockaddr *) &si_other, &len); //get discover packet from client
-		printSend(sockfd, "129.120.151.96", current, rPacket.tran_ID+1, 3600, si_other); //send offer packet
+		printSend(sockfd, netaddr, current, rPacket.tran_ID+1, 3600, si_other); //send offer packet
 		memset(&rPacket, 0, sizeof(rPacket));
 		recvfrom(sockfd, &rPacket, sizeof rPacket, 0, (struct sockaddr *) &si_other, &len); //get request packet from client
-		printSend(sockfd, "129.120.151.96", rPacket.yiaddr, rPacket.tran_ID, rPacket.lifetime, si_other); //send ACK
+		printSend(sockfd, netaddr, rPacket.yiaddr, rPacket.tran_ID, rPacket.lifetime, si_other); //send ACK
 		current++; //go to next available IP address
 	}
 	printf("**All IP addresses are taken**\n "); //output message and do nothing when all IPs are assigned

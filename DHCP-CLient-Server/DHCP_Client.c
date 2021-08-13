@@ -12,7 +12,6 @@
 
 #include "packet.h"
 
-#define SERVER "129.120.151.96"
 
 int main(int argc, char* argv[])
 {
@@ -39,11 +38,13 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	printSend(sockfd, "129.120.151.96", stringToBin("0.0.0.0"), rand(), 0, si_other); //send discover packet to server
+    printf("network address (MUST match server): "); //get network address from user
+    scanf("%s", netaddr);
+	printSend(sockfd, netaddr, stringToBin("0.0.0.0"), rand(), 0, si_other); //send discover packet to server
 	packet rPacket;
 	memset(&rPacket, 0, sizeof(rPacket));
 	recvfrom(sockfd, &rPacket, sizeof rPacket, 0, NULL, NULL); //receive offer packet from server
-	printSend(sockfd, "129.120.151.96", rPacket.yiaddr, rPacket.tran_ID+1, rPacket.lifetime, si_other); //send request packet to server
+	printSend(sockfd, netaddr, rPacket.yiaddr, rPacket.tran_ID+1, rPacket.lifetime, si_other); //send request packet to server
 	memset(&rPacket, 0, sizeof(rPacket));
 	recvfrom(sockfd, &rPacket, sizeof rPacket, 0, NULL, NULL); //receive ack from server
 	sleep(3600); //sleep client for 1 hour
