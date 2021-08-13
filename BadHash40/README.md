@@ -13,6 +13,8 @@ Our birthday attack will only need to run at most two times before it detects a 
 This is because the output of BadHash40 will be 40 bits in size. Our program will use BadHash40 on the random messages to get encrypted messages, then it will store the inputs and outputs to a 2D array. 
 Then it will perform heap sort on the second row of the array, which stores the output. Finally, it will look for duplicate outputs in the array and print them to the console along with their inputs. 
 The array also gets written into a “hash.txt” file.
+  
+To run and compile, do *python solution.py*.
 
 ## Output
 
