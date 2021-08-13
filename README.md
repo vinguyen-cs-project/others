@@ -18,7 +18,7 @@ I've written the pseudocode for:
 ## Algorithm
 
 - A C++ program that uses different methods of hashing and collision handling to efficiently store and manipulate data in [HashTable](https://github.com/vinguyen-cs-project/small-projects/tree/master/HashTable) *(group)*
-- - A C++ program running radix sort on a random number sequence of any chosen base in [RadixSort](https://github.com/vinguyen-cs-project/small-projects/tree/master/RadixSort) *(personal)*
+- A C++ program running radix sort on a random number sequence of any chosen base in [RadixSort](https://github.com/vinguyen-cs-project/small-projects/tree/master/RadixSort) *(personal)*
 
 ## Computer Networks
 
