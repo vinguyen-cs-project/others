@@ -15,10 +15,9 @@ I've written the pseudocode for:
 
 - A C++ program running graph reduction algorithm to detect deadlock state in a resource allocation graph in [DeadlockDetection](https://github.com/vinguyen-cs-project/small-projects/tree/master/DeadlockDetection) *(group)*
 
-## Algorithm
+## Computing Foundations
 
 - A C++ program that uses different methods of hashing and collision handling to efficiently store and manipulate data in [HashTable](https://github.com/vinguyen-cs-project/small-projects/tree/master/HashTable) *(group)*
-- A C++ program running radix sort on a random number sequence of any chosen base in [RadixSort](https://github.com/vinguyen-cs-project/small-projects/tree/master/RadixSort) *(personal)*
 
 ## Computer Networks
 
