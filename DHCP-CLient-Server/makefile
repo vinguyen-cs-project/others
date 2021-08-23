@@ -11,5 +11,5 @@ packet.o : packet.c packet.h
 	gcc -Wall -c packet.c
 
 clean :
-	rm *.out dserver dclient
+	rm *.o dserver dclient
 
