@@ -12,8 +12,6 @@
 #include <time.h>
 #include "segment.h"
 
-#define SERVER "129.120.151.96"
-
 const int sendS[] = { 0, 2, 3, 6};
 int main(int argc, char* argv[])
 {
@@ -24,6 +22,7 @@ int main(int argc, char* argv[])
 	}
 	int sockfd;
 	struct sockaddr_in servaddr, myaddr;
+    char net_addr[256];
 
 	/* AF_INET - IPv4 IP , Type of socket, protocol*/
 	sockfd=socket(AF_INET, SOCK_STREAM, 0);
@@ -34,7 +33,9 @@ int main(int argc, char* argv[])
 	//htons convert little to big endian
 
 	/* Convert IPv4 and IPv6 addresses from text to binary form */
-	inet_pton(AF_INET,SERVER,&(servaddr.sin_addr));
+    printf("network address: "); //get network address from user
+    scanf("%s", net_addr);
+	inet_pton(AF_INET,net_addr,&(servaddr.sin_addr));
 
 	/* Connect to the server */
 	connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr));
