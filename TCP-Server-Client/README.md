@@ -1,5 +1,4 @@
-This project mimics a three way handshake between a TCP server and a TCP client.  
-**Network Address is harcoded to be 129.120.151.96.**  
+This project mimics a three way handshake between a TCP server and a TCP client with TCP segment.
   
 - To compile the program:  
 A makefile was created, so just run 'make'
