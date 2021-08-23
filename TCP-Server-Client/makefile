@@ -11,5 +11,5 @@ segment.o : segment.c segment.h
 	gcc -Wall -c segment.c
 
 clean :
-	rm *.out data.txt tserver tclient
+	rm *.out tserver tclient
 
